@@ -1,0 +1,11 @@
+
+
+<h1>Sisa is learning to code</h1>
+
+<% @posts.map do |post| %>
+<div class="min-w-full border-b">
+    <h2> <%= link_to post.title, post %> </h2>
+    <%= post.body  %>
+</div>    
+<% end %>
+

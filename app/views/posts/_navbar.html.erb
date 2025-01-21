@@ -1,0 +1,22 @@
+<div class="flex justify-between">
+      <% if user_signed_in? %>
+      <div class="mr-3">
+            <%= link_to "Home", root_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %>
+            <%= link_to "Create new post", new_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %>
+       </div> 
+       <div>   
+            <%= link_to "Profile", edit_user_registration_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %>     
+         
+            <%= button_to "log_out", destroy_user_session_path, method: :delete, class:"inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" %>
+        </div>
+
+        <% else %>
+        <div class="mr-3">
+           <%= link_to "Home", root_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %> 
+        </div>  
+        <div class="mr-3">
+          <%= link_to "log in", new_user_session_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %>
+          <%#= link_to "sign up", new_user_registration_path, class:"no-underline bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" %>
+        </div>
+      <% end%>
+    </div>

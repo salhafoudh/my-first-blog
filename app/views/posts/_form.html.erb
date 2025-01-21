@@ -1,0 +1,29 @@
+<!-- <form class="create_post">
+    <div class="title">
+        <label for="name">Title:</lable>
+        <input type="string"/> 
+    </div>
+        <div class="article">
+        <label for="body">Body</lable>
+        <input type="text"/>
+    </div>
+    <input type="submit"/>
+    </form> -->
+
+<div class="w-full max-w-xs">
+<%= form_with model: @post, class:"bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" do |form| %>
+
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+    <% end %>
+
+    <%= form.label :title, class:"block text-gray-700 text-sm font-bold mb-2"  %>
+    <%= form.text_field :title, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"%>
+
+    <%= form.label :body, class:"block text-gray-700 text-sm font-bold mb-2"  %>
+    <%= form.text_area :body, class:"min-h-3.5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%= form.button class:"inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" %>
+<% end %>    
+</div>
