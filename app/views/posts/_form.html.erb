@@ -24,6 +24,13 @@
 
     <%= form.label :body, class:"block text-gray-700 text-sm font-bold mb-2"  %>
     <%= form.text_area :body, class:"min-h-3.5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    
+    <%= form.label :published_at, class:"block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.datetime_select :published_at, include_blank: true, class:"min-h-3.5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    
+
     <%= form.button class:"inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" %>
+
+
 <% end %>    
 </div>
